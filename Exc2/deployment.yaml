@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: scaletestapp 
+  labels: 
+    app: web
+
+spec:
+  selector:
+    matchLabels:
+      app: web
+  
+  # replicas: 1 # do not specify replicas count by recommendations
+
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: scaletestapp
+          image: shestera/scaletestapp
+          resources:
+            limits:
+              memory: "30Mi"чччччччччввв
